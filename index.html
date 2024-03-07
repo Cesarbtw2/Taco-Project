@@ -1,0 +1,70 @@
+<!DOCTYPE html> <html><head>
+        <title>Taco Project</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&amp;display=swap" rel="stylesheet">
+    <style>body {
+    font-family: 'Oswald', sans-serif;
+    background-color: #c0c0c0;
+    text-align: center;
+}
+
+img {
+    width: 400px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+
+}
+
+button {
+    height: 40px;
+}</style></head>
+    <body>
+        <div class="title">
+            <h1>What kind of taco are you?</h1>
+        </div>
+        <div class="questions">
+        </div>
+        <img alt="A plate of 7 tacos" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/oakland/tacos0-31c202bd5056a36_31c203b8-5056-a36f-2300560f0c8b3ddd.jpg">
+        <div class="answer1">
+            <p>How many tacos do you usually eat?</p>
+            <input placeholder="Put A Number" class="a1">
+
+        </div>
+        <img alt="A kid sticking his tongue out" src="https://img.buzzfeed.com/buzzfeed-static/static/2021-01/4/18/campaign_images/92a0d962fe43/how-much-of-a-picky-eater-are-you-2-24014-1609783908-11_dblbig.jpg?resize=1200:*">
+        <div class="answer2">
+            <p>Are you picky?</p>
+            <input placeholder="Picky, Not Picky, Kinda" class="a2">
+            <button>Submit</button>
+            <p class="letter-grade"></p>
+        </div>
+        <div class="result">
+            this is where the user will see their quiz result!
+        </div>
+
+
+
+    
+<script>
+/*__POPCODESTART__*/
+var surprise = document.querySelector(".result");
+var button = document.querySelector("button");
+
+button.onclick = function () {
+  var tacos = document.querySelector(".a1").value;
+  var picky = document.querySelector(".a2").value;
+  console.log(tacos);
+  console.log(picky);
+
+  if (tacos < 3 && picky === "picky") {
+    surprise.innerHTML = "You eat " + tacos + " tacos. You are " + picky + ". This means you are a taco of asada.";
+  } else if (tacos === "3" && picky === "not picky") {
+    surprise.innerHTML = "You eat " + tacos + " tacos. You are " + picky + ". This means you are a taco of pastor.";
+  } else if (tacos > 3 && picky === "kinda") {
+    surprise.innerHTML = "You eat " + tacos + " tacos. You are " + picky + ". This means you are a taco of lengua.";
+  } else if (tacos < 3 && picky === "kinda") {
+    surprise.innerHTML = "You eat " + tacos + " tacos. You are " + picky + ". This means you are a taco of pollo.";
+  }
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbInN1cnByaXNlIiwiZG9jdW1lbnQiLCJxdWVyeVNlbGVjdG9yIiwiYnV0dG9uIiwib25jbGljayIsInRhY29zIiwidmFsdWUiLCJwaWNreSIsImNvbnNvbGUiLCJsb2ciLCJpbm5lckhUTUwiXSwibWFwcGluZ3MiOiJBQUFBLElBQUlBLFFBQVEsR0FBR0MsUUFBUSxDQUFDQyxhQUFULENBQXVCLFNBQXZCLENBQWY7QUFDQSxJQUFJQyxNQUFNLEdBQUdGLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixRQUF2QixDQUFiOztBQUdBQyxNQUFNLENBQUNDLE9BQVAsR0FBaUIsWUFBVztBQUN4QixNQUFJQyxLQUFLLEdBQUdKLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixLQUF2QixFQUE4QkksS0FBMUM7QUFDQSxNQUFJQyxLQUFLLEdBQUdOLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixLQUF2QixFQUE4QkksS0FBMUM7QUFDQUUsRUFBQUEsT0FBTyxDQUFDQyxHQUFSLENBQVlKLEtBQVo7QUFDQUcsRUFBQUEsT0FBTyxDQUFDQyxHQUFSLENBQVlGLEtBQVo7O0FBQ0EsTUFBSUYsS0FBSyxHQUFHLENBQVIsSUFBYUUsS0FBSyxLQUFLLE9BQTNCLEVBQW9DO0FBQ2hDUCxJQUFBQSxRQUFRLENBQUNVLFNBQVQsR0FBcUIsYUFBYUwsS0FBYixHQUFxQixrQkFBckIsR0FBMENFLEtBQTFDLEdBQWtELHVDQUF2RTtBQUNILEdBRkQsTUFFTyxJQUFJRixLQUFLLEtBQUssR0FBVixJQUFpQkUsS0FBSyxLQUFLLFdBQS9CLEVBQTRDO0FBQy9DUCxJQUFBQSxRQUFRLENBQUNVLFNBQVQsR0FBcUIsYUFBYUwsS0FBYixHQUFxQixrQkFBckIsR0FBMENFLEtBQTFDLEdBQWtELHdDQUF2RTtBQUVILEdBSE0sTUFHQSxJQUFJRixLQUFLLEdBQUcsQ0FBUixJQUFhRSxLQUFLLEtBQUssT0FBM0IsRUFBb0M7QUFDdkNQLElBQUFBLFFBQVEsQ0FBQ1UsU0FBVCxHQUFxQixhQUFhTCxLQUFiLEdBQXFCLGtCQUFyQixHQUEwQ0UsS0FBMUMsR0FBa0Qsd0NBQXZFO0FBQ0gsR0FGTSxNQUVBLElBQUlGLEtBQUssR0FBRyxDQUFSLElBQWFFLEtBQUssS0FBSyxPQUEzQixFQUFvQztBQUN2Q1AsSUFBQUEsUUFBUSxDQUFDVSxTQUFULEdBQXFCLGFBQWFMLEtBQWIsR0FBcUIsa0JBQXJCLEdBQTBDRSxLQUExQyxHQUFrRCx1Q0FBdkU7QUFDSDtBQUNKLENBZkQiLCJzb3VyY2VzQ29udGVudCI6WyJsZXQgc3VycHJpc2UgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJlc3VsdFwiKTtcbmxldCBidXR0b24gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiYnV0dG9uXCIpO1xuXG5cbmJ1dHRvbi5vbmNsaWNrID0gZnVuY3Rpb24oKSB7XG4gICAgbGV0IHRhY29zID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5hMVwiKS52YWx1ZTtcbiAgICBsZXQgcGlja3kgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLmEyXCIpLnZhbHVlO1xuICAgIGNvbnNvbGUubG9nKHRhY29zKTtcbiAgICBjb25zb2xlLmxvZyhwaWNreSk7XG4gICAgaWYgKHRhY29zIDwgMyAmJiBwaWNreSA9PT0gXCJwaWNreVwiKSB7XG4gICAgICAgIHN1cnByaXNlLmlubmVySFRNTCA9IFwiWW91IGVhdCBcIiArIHRhY29zICsgXCIgdGFjb3MuIFlvdSBhcmUgXCIgKyBwaWNreSArIFwiLiBUaGlzIG1lYW5zIHlvdSBhcmUgYSB0YWNvIG9mIGFzYWRhLlwiO1xuICAgIH0gZWxzZSBpZiAodGFjb3MgPT09IFwiM1wiICYmIHBpY2t5ID09PSBcIm5vdCBwaWNreVwiKSB7XG4gICAgICAgIHN1cnByaXNlLmlubmVySFRNTCA9IFwiWW91IGVhdCBcIiArIHRhY29zICsgXCIgdGFjb3MuIFlvdSBhcmUgXCIgKyBwaWNreSArIFwiLiBUaGlzIG1lYW5zIHlvdSBhcmUgYSB0YWNvIG9mIHBhc3Rvci5cIjtcblxuICAgIH0gZWxzZSBpZiAodGFjb3MgPiAzICYmIHBpY2t5ID09PSBcImtpbmRhXCIpIHtcbiAgICAgICAgc3VycHJpc2UuaW5uZXJIVE1MID0gXCJZb3UgZWF0IFwiICsgdGFjb3MgKyBcIiB0YWNvcy4gWW91IGFyZSBcIiArIHBpY2t5ICsgXCIuIFRoaXMgbWVhbnMgeW91IGFyZSBhIHRhY28gb2YgbGVuZ3VhLlwiO1xuICAgIH0gZWxzZSBpZiAodGFjb3MgPCAzICYmIHBpY2t5ID09PSBcImtpbmRhXCIpIHtcbiAgICAgICAgc3VycHJpc2UuaW5uZXJIVE1MID0gXCJZb3UgZWF0IFwiICsgdGFjb3MgKyBcIiB0YWNvcy4gWW91IGFyZSBcIiArIHBpY2t5ICsgXCIuIFRoaXMgbWVhbnMgeW91IGFyZSBhIHRhY28gb2YgcG9sbG8uXCI7XG4gICAgfVxufTsiXX0=</script></body></html>
