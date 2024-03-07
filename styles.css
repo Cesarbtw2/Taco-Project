@@ -1,0 +1,19 @@
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: #c0c0c0;
+    text-align: center;
+}
+
+img {
+    width: 400px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+
+}
+
+button {
+    height: 40px;
+}
